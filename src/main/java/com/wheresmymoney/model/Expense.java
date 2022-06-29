@@ -5,10 +5,7 @@ import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.NumberFormat;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -28,5 +25,6 @@ public class Expense extends GenericId {
     @NumberFormat(pattern = "#,##0.00")
     private BigDecimal tax;
 
+    @Enumerated(EnumType.STRING)
     private TypeExpense typeExpense;
 }
